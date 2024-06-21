@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVITAR v2 download</title>
+    <style>
+        body {
+            background: url('https://cdn.discordapp.com/attachments/983876693691334676/1113081033940807730/a_7d91f8f8e100b8bbd16d04a060ff6bee.gif?ex=6672ce7e&is=66717cfe&hm=9fd9f25927eb905dd7e57c74b1e87702a4cba53f151ff6b028909d26a9788ee9&') center/cover fixed;
+            font-family: 'Hack', monospace; /* Example font-family */
+            color: #ff00ea;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        header {
+            margin-bottom: 20px;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .option {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 10px;
+            cursor: pointer;
+            width: 40%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .option:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        h1, h2 {
+            font-size: 24px;
+        }
+        
+        .captcha {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        img {
+            width: 200px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SAVITAR </h1>
+        </header>
+        
+        <div class="captcha">
+            <p>Please solve the CAPTCHA to proceed:</p>
+            <img src="https://cdn.discordapp.com/attachments/1240568341723353088/1252709235108741181/image.png?ex=667333e3&is=6671e263&hm=c8fca5cf5444a80fca5711a692a2883803699c9cdcadbc01af5f9346f53d69f9&" alt="CAPTCHA Image">
+            <input type="text" id="captchaInput" placeholder="Enter the text">
+            <button onclick="checkCaptcha()">Submit</button>
+        </div>
+
+        <div class="options" style="display: none;">
+            <div class="option">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h2>Downloads</h2>
+                </a>
+            </div>
+            <div class="option">
+                <a href="dth.html" style="text-decoration: none; color: inherit;">
+                    <h2>Screen Share</h2>
+                </a>
+            </div>
+            <div class="option">
+                <a href="scripts.html" style="text-decoration: none; color: inherit;">
+                    <h2>Scripts</h2>
+                </a>
+            </div>
+            <div class="option">
+                <a href="join.html" style="text-decoration: none; color: inherit;">
+                    <h2>Join</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="options" style="display: none;">
+        <div class="option">
+            <a href="pc.html" style="text-decoration: none; color: inherit;">
+                <h2>pc</h2>
+            </a>
+        </div>
+
+    <script>
+        function checkCaptcha() {
+            var captchaInput = document.getElementById('captchaInput').value.toLowerCase();
+            var expectedAnswer = 'savitar'; // Replace with actual expected answer
+            
+            if (captchaInput === expectedAnswer) {
+                document.querySelector('.captcha').style.display = 'none';
+                document.querySelector('.options').style.display = 'flex';
+            } else {
+                alert('Incorrect CAPTCHA. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
